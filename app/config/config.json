@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "sumoadmin",
+    "password": "sumo-password",
+    "database": "sumodb",
+    "host": "sumo-db.ckv0kzir4phf.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql",
+    "dialectOptions": "{ssl: 'Amazon RDS'}"
+  },
+  "test": {
+    "username": "sumoadmin",
+    "password": "sumo-password",
+    "database": "sumodb",
+    "host": "sumo-db.ckv0kzir4phf.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql",
+    "dialectOptions": "{ssl: 'Amazon RDS'}"
+  },
+  "production": {
+    "username": "sumoadmin",
+    "password": "sumo-password",
+    "database": "sumodb",
+    "host": "sumo-db.ckv0kzir4phf.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql",
+    "dialectOptions": "{ssl: 'Amazon RDS'}"
+  }
+}

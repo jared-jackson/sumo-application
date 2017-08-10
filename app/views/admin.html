@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" n>
+<head>
+    <meta charset="UTF-8">
+    <title>Sumo Project</title>
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/css/sumo.css" rel="stylesheet">
+</head>
+<body ng-app="SumoApp">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Sumo Project</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Admin</a></li>
+                <li><a href="/">Q&A</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container" ng-controller="SumoController">
+    <div class="starter-template" style="text-align: center; margin-top: 8em;">
+        <form id="question" name="question" method="post" action="submit">
+            <div class="col-md-12">
+                <div>
+                    <label for="question">QUESTION</label>
+                    <input class="text field" name="question" type="text"/>
+                </div>
+            </div>
+            <div class="col-md-12 spacer">
+                <div id="answer">
+                    <label for="answer">ANSWER 0</label>
+                    <input class="text field" id="answer0" ng-model="question.answer0" name="answer" type="text"/>
+                </div>
+
+            </div>
+
+            <input class="btn" type="submit" value="Submit Question" />
+        </form>
+
+        <input class="btn" id="add_answer" type="submit" value="Add Answer" />
+    </div>
+
+</div><!-- /.container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.min.js"></script>
+<script src="/public/scripts/sumo.js"></script>
+<script>
+    var count = 1;
+    $("#add_answer").click(function(){
+        var new_answer = '<div><label style="font-weight: bold;"' + 'for=answer'+ count + '>ANSWER ' + count + '</label><input class="text field" id="answer' + count + '"' + ' ng-model="question.answer' + count + '"' + 'name="answer" type="text"/></div>';
+        $("#answer").append(new_answer);
+        count++;
+    });
+</script>
+
+</body>
+</html>
